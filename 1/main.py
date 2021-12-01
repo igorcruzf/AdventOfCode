@@ -1,10 +1,7 @@
-sum_greather_than_previous_number = lambda lines: sum(1 for previous, actual in zip(lines, lines[1:]) if actual > previous)
+def one_line_part_one(lines=[int(line) for line in open("1/input.txt").readlines()]): print(sum(1 for i in range(len(lines)-1) if lines[i+1] > lines[i]))
 
 
-def one_line_part_one(): print(sum_greather_than_previous_number([int(line) for line in open("1/input.txt").readlines()]))
-
-
-def one_line_part_two(lines=[int(line) for line in open("1/input.txt").readlines()]): print(sum_greather_than_previous_number([first + second + third for first, second, third in zip(lines, lines[1:], lines[2:])]))
+def one_line_part_two(lines=[int(line) for line in open("1/input.txt").readlines()]): print(sum(1 for i in range(len(lines)-3) if lines[i] + lines[i+1] + lines[i+2] < lines[i+1] + lines[i+2] + lines[i+3]))
 
 
 if __name__ == '__main__':
